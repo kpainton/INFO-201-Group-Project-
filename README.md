@@ -6,9 +6,13 @@ We’ll be working with the *_Global Shark Attack dataset_* collected by the Sha
 The target audience of this dataset are _medical personnel_, _shark behaviourists_, _lifesavers_ and the _media_. The media would be a primary target audience to focus on. Researchers who gather this data conduct personal interviews with medical personnel, victims and witnesses to obtain a first-hand account of this incident. A forensic analysis is then conducted on the incident and reported accurately to the media to ensure that the stereotype of sharks naturally attacking humans being can one day be broken and inform the world that sharks are not as dangerous as the general population thinks.
 
 Some specific questions we aim to answer
+
 *1)* When do shark incidents usually occur?
+
 *2)* Areas with the most incidents?
+
 *3)* How fatal are the injuries?
+
 *4)* Which are the deadliest sharks?
 
 
