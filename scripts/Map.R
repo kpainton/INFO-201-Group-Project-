@@ -19,8 +19,8 @@ create_map <- function(df, front, back, class, truth) {
   if (truth == "TRUE") {
     df <- df %>% 
       filter(Species != "Unknown Species") %>%
-      filter(Decade != "pre-1880" ) %>% 
       filter(Type != "Unknown") %>%
+      filter(Type != "Invalid") %>%
       filter(Fatal != "Unknown")
   } 
 
@@ -31,6 +31,8 @@ create_map <- function(df, front, back, class, truth) {
               mode = 'scattermapbox'
               ) %>%
   add_markers(text = ~paste("Date = ", df$Date, 
+                            "<br />",
+                            "Location =", df$Location,
                             "<br />",
                             "Species =", df$Species,
                             "<br />",
@@ -51,7 +53,6 @@ create_map <- function(df, front, back, class, truth) {
          margin = list(l = 25, r = 25,
                        b = 25, t = 25,
                        pad = 2))
-  
   # Returns map
   p
 }
