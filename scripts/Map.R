@@ -3,7 +3,6 @@
 source("./scripts/map_key.R")
 
 # Libraries Needed to build Map
-library(plotly)
 library(dplyr)
 
 # To make this specific map, use MAPBOX

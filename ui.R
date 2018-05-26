@@ -1,6 +1,7 @@
 # Library needed to create shiny app
 library(shiny)
 library(shinythemes)
+library(plotly)
 
 # Creates the shiny UI for my app
 shinyUI(navbarPage(theme = shinytheme("superhero"), 
@@ -68,7 +69,7 @@ shinyUI(navbarPage(theme = shinytheme("superhero"),
           tags$h6(class = "selectFilter", "Fatal: grouped based on if there were
                   any deaths from incident")
         ),
-        sliderInput("range", label = h3("Slider Range"), min = 1800, 
+        sliderInput("range", label = h3("Year Range"), min = 1800, 
                     max = 2017, value = c(1800, 2017),
                     width = "300px"),
         radioButtons("exclude", label = h3("Exclude Unknown Data?"),
@@ -121,7 +122,42 @@ shinyUI(navbarPage(theme = shinytheme("superhero"),
     )
     
     #Tap Panel: Map end
+    ),
+  
+  # Tap Panel: Species Start
+  tabPanel(
+    "Species",
+    
+    # Creates Title for Panel
+    titlePanel("Species"),
+    sidebarLayout(
+      sidebarPanel(
+        radioButtons("PickSpecies", label = h3("Pick a Shark Species"),
+                     choices = list("White Shark (605 total attacks)" = "White Shark",
+                                    "Tiger Shark (234 total attacks)" = "Tiger Shark",
+                                    "Bull Shark (152 total attacks)" = "Bull Shark",
+                                    "Blacktip Shark (64 total attacks)" = "Blacktip Shark",
+                                    "Bronze Whaler Shark (60 total attacks)" = "Bronze Whaler Shark",
+                                    "Mako Shark (51 total attacks)" = "Mako Shark",
+                                    "Nurse Shark (49 total attacks)" = "Nurse Shark",
+                                    "Wobbegong Shark (45 total attacks)" = "Wobbegong Shark",
+                                    "Hammerhead Shark (43 total attacks)" = "Hammerhead Shark",
+                                    "Raggedtooth Shark (43 total attacks)" = "Raggedtooth Shark",
+                                    "Unknown Shark" = "Unknown Species"
+                                    )
+      )
+      ),
+    mainPanel(
+      tabsetPanel(
+        tabPanel("Attacks by Decade (Part One)", plotlyOutput("SpeciesGraph1", width = "800px", height = "600px")),
+        tabPanel("Attacks by Decade (Part Two)", plotlyOutput("SpeciesGraph2", width = "800px", height = "600px") ),
+        tabPanel("Attacks by Attack Type", plotlyOutput("SpeciesGraph3", width = "800px", height = "600px")),
+        tabPanel("Summary of Information")
+        )
+      )
     )
+    # Tap Panel: Home Page end
+  )
   
   #NavBar end
   )
