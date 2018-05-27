@@ -25,8 +25,8 @@ shinyUI(
           tags$br(),
           tags$h4(class = "MissionInfo", "Through the use of the Shark Research
                   Insitute's dataset, we have created multiple tab panels of
-                  data visulaizations of all recorded shark attacks.  These
-                  interactive visualzations will give you the oppurtunity to
+                  data visualizations of all recorded shark attacks.  These
+                  interactive visualizations will give you the oppurtunity to
                   explore different areas of the data set and hopefully provide
                   you with some valuable insight on shark attacks.  Our goal by
                   the end of exploring our app is to help be aware of where and
@@ -57,17 +57,39 @@ shinyUI(
           tags$br(),
           tags$p(class = "Mission", "Those who may be interested in using this
                  dataset would vary from medical personnel, shark behaviorists,
-                 divers, lifesavers to the media. The media would be a major
-                 target audience to focus on. Researchers who gather this data
-                 conducted personal interviews with medical personnel, victims
-                 and witnesses to obtain a first-hand account of this incident.
-                 After forensic analysis is conducted on the incident, it can
-                 then be reported accurately through the media to answer the
-                 public's question of whether the stereotype of sharks
-                 naturally attacking humans is true or merely a misconception.
+                 divers, lifesavers to the media and students. The media would
+                 be a major target audience to focus on. Researchers who gather
+                 this data conducted personal interviews with medical
+                 personnel, victims and witnesses to obtain a first-hand
+                 account of this incident. After forensic analysis is 
+                 conducted on the incident, it can then be reported
+                 accurately through the media to answer the public's question
+                 of whether the stereotype of sharks naturally attacking 
+                 humans is true or merely a misconception.
                  If proven a false stereotype, the mediacan inform the world
                  (their target audience) that sharks are not as dangerous as
-                 the general population thinks.")
+                 the general population thinks."),
+          tags$h3(class = "tabsTitle", "Tab Functions"),
+          tags$p(class = "tabsInfo", "Our App includes the 'Map' tab that
+                 explores gives a summarized and organized visualization of
+                 the data that aims to answer:"),
+          tags$p(class = "tabsInfo",  "1.	Which parts of the world did
+                 the shark attacks occur?
+                 2.	How did the incident occur? Were the sharks
+                    provoked or not?
+                 3.	In which years did these activities occur?
+                 4.	Which species of sharks were attacking in which areas?
+                 "),
+          tags$p(class = "tabsInfo", "Within the 'Map' tab, one can find
+                 the 'Summary of information' tab that explains in detail
+                 some findings we have found our own."),
+          tags$p(class = "tabsInfo",  "The 'Species' tab categorizes
+                 the various shark species and the number of attacks
+                 they have inflicted. The sub tabs within gives a 
+                 detailed account of the time period the specific 
+                 shark species attacked and the state at which the
+                 attack occurred. 
+                 ")
         )
       )
       # Tap Panel: Mission Page end
