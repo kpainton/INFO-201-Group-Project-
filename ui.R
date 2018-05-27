@@ -14,7 +14,45 @@ shinyUI(navbarPage(theme = shinytheme("superhero"),
     titlePanel("Mission"),
       mainPanel(
         tags$div(
-          tags$p("Some sort of paragraph on mission statement/findings/etc.")
+          tags$p("Known as the Global Shark Attack dataset, this dataset was
+                 collected by the Shark Research Institute. This dataset aims
+                 to explore the significance of interactions between sharks
+                 and humans in comparison to the wide variety of dangers we
+                 are exposed to in our daily lives. Humans are not a prey to
+                 sharks, this dataset aims to give a better understanding of
+                 interactions between humans and sharks to minimize the risk
+                 of being injured by a shark and focusing on the importance
+                 of conserving all shark species. "),
+          tags$p("The objective of our App is to visualize relevant
+                  information targeted at several target audiences
+                  including:
+                 1.	Medical Personnel
+                 2.	Shark Behaviourists
+                 3.	Divers
+                 4.	Lifesavers
+                 5.	Media
+                 6.	Students
+                 "),
+          tags$p("Our App aims to answer questions that identifies the
+                 reasons behind occurrences, relationships between
+                 categories of the data, who the victims are and why
+                 they occur at certain timings. "),
+          tags$p("The 'Map' tab gives a summarized and organized
+                  visualization of the data that aims to answer:
+                 1.	Which parts of the world did the shark attacks occur?
+                 2.	How did the incident occur? Were the sharks
+                    provoked or not?
+                 3.	In which years did these activities occur?
+                 4.	Which species of sharks were attacking in which areas?
+                 "),
+          tags$p("Within the 'Map' tab, one can find the 'Summary of
+                 information' tab that explains in detail some findings
+                 we have found our own."),
+          tags$p("The 'Species' tab categorizes the various shark species
+                 and the number of attacks they have inflicted. The sub
+                 tabs within gives a detailed account of the time period
+                 the specific shark species attacked and the state at
+                 which the attack occurred.")
         )
       )
     # Tap Panel: Home Page end
