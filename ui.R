@@ -225,7 +225,7 @@ shinyUI(
 
       # Creates Title for Species panel
       titlePanel(tags$div(tags$h1(class = "mapTitle",
-                                  "Breakdown of Shark Species Attacks"))),
+                                  "Breakdown of Sharks Attacks By Species"))),
       sidebarLayout(
 
         # Creates side panel for pick the species option
