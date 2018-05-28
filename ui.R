@@ -74,12 +74,13 @@ shinyUI(
                  explores gives a summarized and organized visualization of
                  the data that aims to answer:"),
           tags$p(class = "tabsInfo",  "1.	Which parts of the world did
-                 the shark attacks occur?
-                 2.	How did the incident occur? Were the sharks
-                    provoked or not?
-                 3.	In which years did these activities occur?
-                 4.	Which species of sharks were attacking in which areas?
-                 "),
+                 the shark attacks occur?"),
+          tags$p(class = "tabsInfo", "2. How did the incident occur?
+                 Were the sharks provoked or not?"),
+          tags$p(class = "tabsInfo", "3. In which years did activities
+                 occur?"),
+          tags$p(class = "tabsInfo", "4. Which species of sharks were
+                 attacking in which areas?"),
           tags$p(class = "tabsInfo", "Within the 'Map' tab, one can find
                  the 'Summary of information' tab that explains in detail
                  some findings we have found our own."),
@@ -88,8 +89,7 @@ shinyUI(
                  they have inflicted. The sub tabs within gives a 
                  detailed account of the time period the specific 
                  shark species attacked and the state at which the
-                 attack occurred. 
-                 ")
+                 attack occurred.")
         )
       )
       # Tap Panel: Mission Page end
@@ -329,8 +329,9 @@ shinyUI(
     # Tap Panel: Species end
     ),
     tabPanel(
-      "Mission",
-      # Creates Title for Mission Panel
+      "Fourth",
+      
+      # Creates Title
       titlePanel("The fourth"),
       
       # Creates page for information on our app"

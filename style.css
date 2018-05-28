@@ -10,7 +10,7 @@
 }
 
 .mapQuick {
-  font-family: Times;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   line-height: 125%;
   text-shadow:
@@ -32,8 +32,7 @@
 
 .Mission {
   font-family: Times;
-  font-size: 12px;
-  text-align: center;
+  font-size: 14px;
   text-shadow:
     -0.5px -0.5px 0 #000,
     0.5px -0.5px 0 #000,
