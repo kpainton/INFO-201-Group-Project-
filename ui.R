@@ -61,10 +61,10 @@ shinyUI(
                  be a major target audience to focus on. Researchers who gather
                  this data conducted personal interviews with medical
                  personnel, victims and witnesses to obtain a first-hand
-                 account of this incident. After forensic analysis is 
+                 account of this incident. After forensic analysis is
                  conducted on the incident, it can then be reported
                  accurately through the media to answer the public's question
-                 of whether the stereotype of sharks naturally attacking 
+                 of whether the stereotype of sharks naturally attacking
                  humans is true or merely a misconception.
                  If proven a false stereotype, the mediacan inform the world
                  (their target audience) that sharks are not as dangerous as
@@ -86,8 +86,8 @@ shinyUI(
                  some findings we have found our own."),
           tags$p(class = "tabsInfo",  "The 'Species' tab categorizes
                  the various shark species and the number of attacks
-                 they have inflicted. The sub tabs within gives a 
-                 detailed account of the time period the specific 
+                 they have inflicted. The sub tabs within gives a
+                 detailed account of the time period the specific
                  shark species attacked and the state at which the
                  attack occurred.")
         )
@@ -328,20 +328,41 @@ shinyUI(
 
     # Tap Panel: Species end
     ),
+  
+    # Tab Panel for Shark Attacks
     tabPanel(
-      "Fourth",
-      
+      "Time of Shark Attacks",
+    
       # Creates Title
-      titlePanel("The fourth"),
-      
-      # Creates page for information on our app"
+      titlePanel("Time of Shark Attacks"),
+    
+      # Creates layout for time panel
       sidebarLayout(
-        mainPanel(
+      
+        #Creates the sidebar panel
+        sidebarPanel(
+        
+          # Creates select widgit for x axis on graph
+          selectInput(
+            "filterTime",
+            label = h3("Select X axis"),
           
+            # Gives user option for the filter input panel
+            choices = list(
+              "Attack" = "Type",
+              "Decade" = "Decade",
+              "Species" = "Species",
+              "Activity" = "Activity"
+            ),
+            width = "200px"
+          )
         ),
-        tags$div()
+        mainPanel(
+          plotOutput("Time_Graph",
+                       width = "800px", height = "600px")
+        )
       )
-      # Tap Panel: 4th tab end
+      # Tap Panel Time of Attacks
     )
     # NavBar end
   )

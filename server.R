@@ -3,6 +3,7 @@
 # Source data
 source("./scripts/Map.R")
 source("./scripts/Species.R")
+source("./scripts/BoxPlot.R")
 
 # Read in Data
 df <- read.csv(file = "./data/Attacks.with.lat.long.csv")
@@ -31,5 +32,10 @@ shinyServer(function(input, output) {
   # Creates the output for third species graph
   output$Species_Graph_3 <- renderPlotly({
     return(create_species_fatal_attack(df, input$PickSpecies))
+  })
+
+  # Creates the output for the time box plot
+  output$Time_Graph <- renderPlot({
+    return(time_breakdown(df, input$filterTime))
   })
 })
