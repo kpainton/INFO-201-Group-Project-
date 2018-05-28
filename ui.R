@@ -327,8 +327,21 @@ shinyUI(
       )
 
     # Tap Panel: Species end
+    ),
+    tabPanel(
+      "Mission",
+      # Creates Title for Mission Panel
+      titlePanel("The fourth"),
+      
+      # Creates page for information on our app"
+      sidebarLayout(
+        mainPanel(
+          
+        ),
+        tags$div()
+      )
+      # Tap Panel: 4th tab end
     )
-
     # NavBar end
   )
   # Shiny UI end
