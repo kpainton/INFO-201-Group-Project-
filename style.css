@@ -2,6 +2,33 @@
   font-family: impact;
   text-align: center;
   font-style: bold;
+  color:lightskyblue;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sumI {
+  font-family: impact;
+  color:lightskyblue;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.different {
+  font-family: impact;
+  color:lightskyblue;
   text-shadow:
     -1px -1px 0 #000,
     1px -1px 0 #000,
@@ -10,7 +37,6 @@
 }
 
 .mapQuick {
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   line-height: 125%;
   text-shadow:
@@ -31,8 +57,20 @@
 }
 
 .Mission {
-  font-family: Times;
-  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 16px;
+  text-shadow:
+    -0.5px -0.5px 0 #000,
+    0.5px -0.5px 0 #000,
+    -0.5px 0.5px 0 #000,
+    0.5px 0.5px 0 #000;
+}
+
+.tabsInfo {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 16px;
   text-shadow:
     -0.5px -0.5px 0 #000,
     0.5px -0.5px 0 #000,
@@ -42,6 +80,7 @@
 
 .MissionInfo {
   font-family: Times;
+  font-style: italic;
   text-shadow:
     -1px -1px 0 #000,
     1px -1px 0 #000,
@@ -58,13 +97,28 @@ h2 {
     1px 1px 0 #000;
 }
 
-h3 {
+.sharkTypes {
   font-family: impact;
+  color:yellow;
   text-shadow:
     -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
+}
+
+h3 {
+  font-family: impact;
+  color: crimson;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+h4 {
+  font-style: italic
 }
 
 h6 {

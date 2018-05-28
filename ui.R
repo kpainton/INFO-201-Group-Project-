@@ -6,7 +6,7 @@ library(plotly)
 # Creates the shiny UI for my app
 shinyUI(
   navbarPage(
-    theme = shinytheme("superhero"),
+    theme = shinytheme("slate"),
     "Sharks",
 
     # Creats Tab Panel for Mission tab
@@ -23,18 +23,20 @@ shinyUI(
       fluidPage(
         tags$div(
           tags$br(),
+          tags$img(src = "shark1.jpg", height = 300, width = 500, class = "center"),
           tags$h4(class = "MissionInfo", "Through the use of the Shark Research
                   Insitute's dataset, we have created multiple tab panels of
                   data visualizations of all recorded shark attacks.  These
                   interactive visualizations will give you the oppurtunity to
                   explore different areas of the data set and hopefully provide
-                  you with some valuable insight on shark attacks.  Our goal by
-                  the end of exploring our app is to help be aware of where and
-                  how these shark attacks happen, learn about the different
-                  species of sharks, and better understand the complexity of
-                  these different incidents."),
+                  you with some valuable insight on shark attacks. By the
+                  end of our App, we hope you will be more informed on
+                  where and how these shark attacks happen, learn about the
+                  different species of sharks, and better understand the
+                  complexity of these different incidents."),
           tags$br(),
           tags$h3(class = "mapTitle", "Information on the Data set"),
+          tags$img(src = "oceanFloor.jpg", height = 200, width = 600, class = "center"),
           tags$br(),
           tags$p(class = "Mission", "   The data used in our shiny app is the
                   Global Shark Attack dataset collected by the Shark Research
@@ -69,9 +71,10 @@ shinyUI(
                  If proven a false stereotype, the mediacan inform the world
                  (their target audience) that sharks are not as dangerous as
                  the general population thinks."),
-          tags$h3(class = "tabsTitle", "Tab Functions"),
+          tags$h3(class = "mapTitle", "Tab Functions"),
+          tags$img(src = "shark2.jpg", height = 300, width = 500, class = "center"),
           tags$p(class = "tabsInfo", "Our App includes the 'Map' tab that
-                 explores gives a summarized and organized visualization of
+                 gives a summarized and organized visualization of
                  the data that aims to answer:"),
           tags$p(class = "tabsInfo",  "1.	Which parts of the world did
                  the shark attacks occur?"),
@@ -89,7 +92,10 @@ shinyUI(
                  they have inflicted. The sub tabs within gives a
                  detailed account of the time period the specific
                  shark species attacked and the state at which the
-                 attack occurred.")
+                 attack occurred."),
+          tags$p(class = "tabsInfo",  "The 'Time of Shark Attacks Tab',
+                 aims to find out when attacks usually occur at the
+                 given time of the day.")
         )
       )
       # Tap Panel: Mission Page end
@@ -107,21 +113,20 @@ shinyUI(
       sidebarLayout(
         sidebarPanel(
           tags$div(
-            tags$h6(class = "mapQuick", "This map is designed to give you a
-                    visual display of where most shark attacks take place
-                    globally.  The various widgits below let you control
-                    the data being displayed on the map.  The map is
-                    interactive allowing you to hover each point to see
-                    information on the date, location, species, sex of victim,
-                    and if the injuries were fatal.  Additionally, you can zoom
-                    in/out in the map and filter in/out groups displayed on the
-                    map by clicking on each group in the legend")
+            tags$h5(class = "mapQuick", "This map creates a data
+                    visualization of the locations where shark
+                    attacks occur in the world. Use the widgets
+                    below to change the data displayed on the
+                    map. In addition, hover over the points
+                    for more detailed information and you can
+                    even click on the legends to further specify
+                    which data is to be displayed")
           ),
 
           # Creates the select input to filter different points on the map
           selectInput(
             "filterclass",
-            label = h3("Select Filter"),
+            label = h3("Choose What to See!"),
 
             # Gives user option for the filter input panel
             choices = list(
@@ -133,9 +138,7 @@ shinyUI(
             width = "200px"
           ),
           tags$div(
-            tags$h6(class = "selectFilter", "Here you can choose a filter
-                    option to have the color of the points on the map represent
-                    different groupings of data:"),
+            tags$h6(class = "selectFilter"),
             tags$p(),
             tags$h6(class = "selectFilter", "Decade:
                     grouped into different 10-year time periods"),
@@ -153,7 +156,7 @@ shinyUI(
 
           # Creates the slider function for the range of years
           sliderInput("range",
-            label = h3("Year Range"), min = 1800,
+            label = h3("Vary the Years!"), min = 1800,
             max = 2017, value = c(1800, 2017),
             width = "300px"
           ),
@@ -166,7 +169,8 @@ shinyUI(
           tags$div(
             tags$h6(class = "selectFilter", "By selecting yes, all points that
                     have data with unknown information will be removed from the
-                    map.  For example, any shark species that was not identified
+                    map."),
+            tags$h6(class = "selectFilter", "For example, any shark species that was not identified
                     will not be shown.  By selecting no, all points (exlcuding
                     points that do not have a lon/lat values) regardless of data
                     that they contain will be plotted on the map.")
@@ -188,28 +192,26 @@ shinyUI(
                      plotlyOutput("Map", width = "925px", height = "705px")),
 
             # Creates the panel for information gathered from the map
-            tabPanel("Summary of Inforamtion", tags$div(
-              tags$h2("Here are some quick notes on the information gathered
-                       from the map:"),
+            tabPanel("Summary of Information", tags$div(
+              tags$h2(class = "sumI", "Some quick notes on Map:"),
               tags$br(),
-              tags$h4("- The most aggressive sharks appear to be the
+              tags$h4("1) Most aggressive sharks appear to be the
                       Tiger Shark, White Shark, and Bull Shark"),
               tags$h1(),
-              tags$h4("- The white shark appeared the most 'global shark'
-                      having the most incidents
-                      spread out across the globe"),
+              tags$h4("2) The white shark is the most 'global shark'
+                      with the highest frequency of incidents"),
               tags$h1(),
-              tags$h4("- Most popular areas for attacks: Australia coast,
+              tags$h4("3) Most deadly areas: Australia coast,
                       Southeastern coast of United States (Florida),
                       Western Coast of the United States, Caribbean Islands,
                       Southern Europe, South Africa Coast"),
               tags$h1(),
-              tags$h4("- Most provoked attacks occur along the
+              tags$h4("4) Most provoked attacks occur along the
                       Southeastern Coast of the United States"),
               tags$br(),
-              tags$h2("This information also provides insight
+              tags$h2(class = "sumI", "This information also provides insight
                       on the 'regional' sharks."),
-              tags$h3("Note: region-exlusive represents a
+              tags$h3(class = "different", "Note: region-exlusive represents a
                       species that only appeared in that particualr region"),
               tags$br(),
               tags$h4("Australia: Bronze Whaler Shark (region-exclusive),
@@ -255,7 +257,7 @@ shinyUI(
 
           # Creates radio buttons for user to pick a species
           radioButtons("PickSpecies",
-            label = h3("Pick a Shark Species"),
+            label = h3(class = "sharkTypes", "Pick a Shark Species!"),
             choices = list(
                     "White Shark (605 total attacks)" = "White Shark",
                     "Tiger Shark (234 total attacks)" = "Tiger Shark",
