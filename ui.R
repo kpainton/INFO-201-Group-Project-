@@ -552,7 +552,18 @@ shinyUI(
               
             ),
             width = "200px"
-          )
+          ),
+          tags$br(),
+          tags$h3(class = "description", "Description"),
+          tags$h5(class = "descriptionDetail",
+          "With this bar chart, you are free to explore the dataset among 
+            different decades. In the specific decade you choose, the graph
+            displays numbers of attacks happened among different years/months/days.
+            For instance, if you want to know about the month with highest
+            frequency of attacks and the month with less frequency of attacks
+            among 2010-2017. With only two step, you can accomplish your goal:
+            1. set decade as 2010-2017; 2.set the unit as month. Feel
+            welcome to explore!")
         ),
         mainPanel(
           plotOutput("bar_chart",
