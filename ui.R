@@ -409,9 +409,47 @@ shinyUI(
                         label = h3(class = "tabFive", "Vary the Years!"), min = 1900,
                         max = 2017, value = c(1900, 2017),
                         width = "300px"
-            )
+            ),
+            tags$h3(class = "tabFive", "Findings on Month/Weekday vs Time"),
+            tags$br(),
+            tags$h5(class = "tabFiveWords",
+                    "Based on the data we used, attacks usually occur
+                    in the mornings before 1000hrs. More specifically,
+                    before 0700hrs where the sun might not have risen.
+                    This reiterates the point that water activities
+                    should not be performed in such hours as those
+                    periods of time coincide with the sharks' resting
+                    periods, as such conducting any form of activity
+                    might be seen as a form of provocation that induces
+                    a shark attack. Reading the graphs this finding is
+                    rather consistent whether month or day. Even by changing
+                    the range of years, the results are still consistent
+                    that attacks occur when the sun is out of sight.
+                    Although it is worth noting that shark attacks occur
+                    later in the mornings ,ie. 0500hrs - 1000hrs,
+                    in the second half of the year."),
+            tags$h3(class = "tabFive", "Findings on Month/Weekday vs Total"),
+            tags$br(),
+            tags$h5(class = "tabFiveWords",
+                    "Measuring time periods against the total attacks,
+                    focusing on Months, we found that the period from
+                    June to September proved to be the deadliest months.
+                    This is with the time range since 1900 to the present
+                    year. If we varied the range, it seemed to be random,
+                    thus we by studying the entire time range, gave
+                    a more consistent, credible and comprehensive result.
+                    With June to September as the deadliest months, this
+                    seemed to make sense as Summer season encourages more
+                    people to engage in water activites. The higher
+                    frequency correlates to more occurences of attacks.
+                    Focusing on the weekday, with a time range of the 
+                    entire time period from beginning to present. It
+                    shows that Saturday and Sunday are the deadliest
+                    days. This also makes sense because weekends usually
+                    are when most people are enageged in recreational
+                    activities. Even as we vary the time range, these
+                    results also seem to be rather consistent.")
           ),
-
           # Creates main panel with graphs
           mainPanel(
             tabsetPanel(
