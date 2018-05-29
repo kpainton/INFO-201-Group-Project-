@@ -361,6 +361,36 @@ shinyUI(
               "Species" = "Species"
             ),
             width = "200px"
+          ),
+          tags$div(
+            tags$h5(class = "AttackTime", "
+                    In this tab, we have a box plot graph which we can select 
+                    our preferred horizontal axis variable and see which time 
+                    of the day were the attacks most prominent on, 
+                    based on that variable category. 
+                    We have grouped the dataset into four categories:"),
+            tags$br(),
+            tags$h6(class = "Activity", "Activity: The data is grouped based on which 
+                    popular water activity was the victims doing 
+                    when the attack occurred. The graph then displays 
+                    which time of day were the attacks during each activity most prominent."),
+            tags$br(),
+            tags$h6(class = "AttackType", "Attack Type: The data is grouped based 
+                    on whether the attacks came from sharks that were provoked or 
+                    unprovoked, or caused by boating. The graph then displays on 
+                    which time of day were the attacks most prominent based on each attack type."),
+            tags$br(),
+            tags$h6(class = "Decade", "Decade: The data is grouped based on attacks 
+                    that happened every 10-year period from 1880 to 2017. The graph 
+                    then displays on which time of day were the shark attacks most 
+                    prominent in each decade. As with other time-period graphs, a 
+                    general trend is visible with the time of day for the shark attacks 
+                    narrowing down to mostly during daytime!"),
+            tags$br(),
+            tags$h6(class = "Species", "Species: The data is grouped based on the 
+                    types of sharks that made the recorded attacks. The graph 
+                    then displays on which time of the day do each species 
+                    of shark mostly attacked on. ")
           )
         ),
         mainPanel(
