@@ -107,9 +107,19 @@ h2 {
     1px 1px 0 #000;
 }
 
+.tabFive {
+  font-family: impact;
+  color:yellowgreen;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
 h3 {
   font-family: impact;
-  color: crimson;
+  color: pink;
   text-shadow:
     -1px -1px 0 #000,
     1px -1px 0 #000,

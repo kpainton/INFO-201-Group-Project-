@@ -340,7 +340,10 @@ shinyUI(
       "Time of Shark Attacks",
 
       # Creates Title
-      titlePanel("Time of Shark Attacks"),
+      titlePanel(tags$div(tags$h1(class = "mapTitle",
+                                  "Time of Shark Attacks"))),
+      
+      #titlePanel(class = "mapTitle", "Time of Shark Attacks"),
 
       # Creates layout for time panel
       sidebarLayout(
@@ -407,7 +410,10 @@ shinyUI(
         "Month/Weekday Breakdown of Attacks ",
 
         # Creates Title for Panel
-        titlePanel("Month and Weekday Occurances of Attacks"),
+        titlePanel(tags$div(tags$h1(class = "mapTitle",
+                                    "Month and Weekday Occurences of Attacks"))),
+        
+        #titlePanel(class = "mapTitle", "Month and Weekday Occurances of Attacks"),
 
         # Creates layout for month/weekday panel
         sidebarLayout(
@@ -418,7 +424,7 @@ shinyUI(
             # Creates select widgit for x axis on graph
             selectInput(
               "Xaxis",
-              label = h3("Select X axis"),
+              label = h3(class = "tabFive", "Month or Weekday?"),
 
               # Gives user option for the filter input panel
               choices = list(
@@ -430,7 +436,7 @@ shinyUI(
 
             # Creates slider widgit for user to pick time period
             sliderInput("time",
-                        label = h3("Vary the Years!"), min = 1900,
+                        label = h3(class = "tabFive", "Vary the Years!"), min = 1900,
                         max = 2017, value = c(1900, 2017),
                         width = "300px"
             )
