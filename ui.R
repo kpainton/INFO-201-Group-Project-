@@ -8,9 +8,8 @@ shinyUI(
   navbarPage(
     theme = shinytheme("slate"),
     "Sharks",
-
     # Creats Tab Panel for Mission tab
-    tabPanel(
+     tabPanel(
       "Mission",
 
       # Adds CSS styling to Shiny App
@@ -18,7 +17,7 @@ shinyUI(
 
       # Creates Title for Mission Panel
       titlePanel(tags$h1(class = "mapTitle", "Our Mission")),
-
+      tags$style(type = "text/css", "a{color: #5BC1DB;}"),
       # Creates page for information on our app"
       fluidPage(
         tags$div(
