@@ -5,7 +5,7 @@ source("./scripts/Map.R")
 source("./scripts/Species.R")
 source("./scripts/BoxPlot.R")
 source("./scripts/Time_Total.R")
-
+source("./scripts/Time.R")
 # Read in Data
 df <- read.csv(file = "./data/Attacks.with.lat.long.csv")
 
@@ -50,5 +50,8 @@ shinyServer(function(input, output) {
   output$month_weekday_totals <- renderPlot({
     return(month_weekday_total(df, input$time[1],
                                input$time[2], input$Xaxis))
+  })
+  output$bar_chart <- renderPlot({
+    return(create_bar(df, input$`time `, input$`decade `))
   })
 })

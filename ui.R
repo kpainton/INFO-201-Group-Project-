@@ -498,8 +498,71 @@ shinyUI(
           )
         )
 
+
       # Tab Bar end: Month/Weekday
+      ),
+    # Tab Panel for number of attacks among year/month/day
+    tabPanel(
+      "Numbers of Shark Attacks",
+      
+      # Creates Title
+      titlePanel("Number of Shark Attacks"),
+      
+      # Creates layout for this panel
+      sidebarLayout(
+        
+        # Creates the sidebar panel
+        sidebarPanel(
+          
+          # Creates select decades
+          selectInput(
+            "decade ",
+            label = h3("Select Decade You Want to Explore"),
+            
+            # Gives user option for the filter input panel
+            choices = list(
+              "2010-2017" = "2010-2017",
+              "2000-2009" = "2000-2009",
+              "1990-1999" = "1990-1999",
+              "1980-1989" = "1980-1989",
+              "1970-1979" = "1970-1979",
+              "1970-1979" = "1970-1979",
+              "1960-1969" = "1960-1969",
+              "1950-1959" = "1950-1959",
+              "1940-1949" = "1940-1949",
+              "1930-1939" = "1930-1939",
+              "1920-1929" = "1920-1929",
+              "1910-1919" = "1910-1919",
+              "1900-1909" = "1900-1909",
+              "1890-1899" = "1890-1899",
+              "1880-1889" = "1880-1889",
+              "pre-1880"  = "pre-1880"
+              
+            ),
+            width = "200px"
+          ),
+          selectInput(
+            "time ",
+            label = h3("I want to know the numbers of attack happend among different"),
+            
+            # Gives user option
+            choices = list(
+              "Years" = "Year",
+              "Months" = "Month",
+              "Days" = "Day"
+              
+            ),
+            width = "200px"
+          )
+        ),
+        mainPanel(
+          plotOutput("bar_chart",
+                     width = "800px", height = "600px"
+          )
+        )
       )
+    )
+    # Tab Panel of numbers of attacks end
 
   # NavBar end
   )
