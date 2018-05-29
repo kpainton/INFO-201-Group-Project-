@@ -5,7 +5,9 @@ time_breakdown <- function(df, select) {
 
   # Filters out data with no time
   df <- df %>%
-    filter(Time != 0)
+    filter(Time != 0) %>%
+    filter(Decade != "pre-1880" &
+           Decade != "Unknown")
 
   # Filters for activites
   filters <- c("Surfing", "Swimming", "Fishing", "Kayaking", "Snorkeling")
@@ -31,7 +33,7 @@ time_breakdown <- function(df, select) {
   g <- ggplot(df, aes(df[, select], Time))
 
   # Creates boxplot for different visualization
-  g + geom_boxplot(varwidth = T, fill = "plum") +
+  g + geom_boxplot(varwidth = T, fill = "light blue") +
     labs(
       title = "Time of Shark Attacks",
       subtitle = paste("Time vs", select),

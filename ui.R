@@ -23,7 +23,8 @@ shinyUI(
       fluidPage(
         tags$div(
           tags$br(),
-          tags$img(src = "shark1.jpg", height = 300, width = 500, class = "center"),
+          tags$img(src = "shark1.jpg", height = 300, width = 500,
+                   class = "center"),
           tags$h4(class = "MissionInfo", "Through the use of the Shark Research
                   Insitute's dataset, we have created multiple tab panels of
                   data visualizations of all recorded shark attacks.  These
@@ -36,7 +37,8 @@ shinyUI(
                   complexity of these different incidents."),
           tags$br(),
           tags$h3(class = "mapTitle", "Information on the Data set"),
-          tags$img(src = "oceanFloor.jpg", height = 200, width = 600, class = "center"),
+          tags$img(src = "oceanFloor.jpg", height = 200, width = 600,
+                   class = "center"),
           tags$br(),
           tags$p(class = "Mission", "   The data used in our shiny app is the
                   Global Shark Attack dataset collected by the Shark Research
@@ -72,7 +74,8 @@ shinyUI(
                  (their target audience) that sharks are not as dangerous as
                  the general population thinks."),
           tags$h3(class = "mapTitle", "Tab Functions"),
-          tags$img(src = "shark2.jpg", height = 300, width = 500, class = "center"),
+          tags$img(src = "shark2.jpg", height = 300, width = 500,
+                   class = "center"),
           tags$p(class = "tabsInfo", "Our App includes the 'Map' tab that
                  gives a summarized and organized visualization of
                  the data that aims to answer:"),
@@ -170,10 +173,11 @@ shinyUI(
             tags$h6(class = "selectFilter", "By selecting yes, all points that
                     have data with unknown information will be removed from the
                     map."),
-            tags$h6(class = "selectFilter", "For example, any shark species that was not identified
-                    will not be shown.  By selecting no, all points (exlcuding
-                    points that do not have a lon/lat values) regardless of data
-                    that they contain will be plotted on the map.")
+            tags$h6(class = "selectFilter", "For example, any shark species that
+                    was not identified will not be shown.  By selecting no,
+                    all points (exlcuding points that do not have a lon/lat
+                    values) regardless of data that they contain will be
+                    plotted on the map.")
           ),
           tags$p(class = "disclaimer", "Points are rough estimations of
                  locations and not 100% accurate based on the nature of the
@@ -281,18 +285,18 @@ shinyUI(
           tabsetPanel(
 
             # Creates the tab panel for the first graph
-            tabPanel("Attacks by Decade (Part One)",
-                     plotlyOutput("Species_Graph_1",
+            tabPanel("Attacks by Decade (Fatal)",
+                     plotlyOutput("species_graph_1",
                                   width = "800px", height = "600px")),
 
             # Creates the tab panel for the second graph
-            tabPanel("Attacks by Decade (Part Two)",
-                     plotlyOutput("Species_Graph_2",
+            tabPanel("Attacks by Decade (Attack Type)",
+                     plotlyOutput("species_graph_2",
                                   width = "800px", height = "600px")),
 
             # Creates the tab panel for the third graph
             tabPanel("Attacks by Attack Type",
-                     plotlyOutput("Species_Graph_3",
+                     plotlyOutput("species_graph_3",
                                   width = "800px", height = "600px")),
 
             # Creates the tab panel for the summmary infromation
@@ -330,43 +334,101 @@ shinyUI(
 
     # Tap Panel: Species end
     ),
-  
+
     # Tab Panel for Shark Attacks
     tabPanel(
       "Time of Shark Attacks",
-    
+
       # Creates Title
       titlePanel("Time of Shark Attacks"),
-    
+
       # Creates layout for time panel
       sidebarLayout(
-      
+
         #Creates the sidebar panel
         sidebarPanel(
-        
+
           # Creates select widgit for x axis on graph
           selectInput(
             "filterTime",
             label = h3("Select X axis"),
-          
+
             # Gives user option for the filter input panel
             choices = list(
-              "Attack" = "Type",
+              "Activity" = "Activity",
+              "Attack Type" = "Type",
               "Decade" = "Decade",
-              "Species" = "Species",
-              "Activity" = "Activity"
+              "Species" = "Species"
             ),
             width = "200px"
           )
         ),
         mainPanel(
-          plotOutput("Time_Graph",
+          plotOutput("time_graph",
                        width = "800px", height = "600px")
+          )
         )
+
+      # Time Shark Attacks Panel End
+      ),
+
+      # Tap Panel Time/Total of Attacks vs Month/Weekday
+      tabPanel(
+        "Month/Weekday Breakdown of Attacks ",
+
+        # Creates Title for Panel
+        titlePanel("Month and Weekday Occurances of Attacks"),
+
+        # Creates layout for month/weekday panel
+        sidebarLayout(
+
+          #Creates the sidebar panel
+          sidebarPanel(
+
+            # Creates select widgit for x axis on graph
+            selectInput(
+              "Xaxis",
+              label = h3("Select X axis"),
+
+              # Gives user option for the filter input panel
+              choices = list(
+                "Month" = "Month",
+                "Weekday" = "Weekday"
+              ),
+              width = "200px"
+            ),
+
+            # Creates slider widgit for user to pick time period
+            sliderInput("time",
+                        label = h3("Vary the Years!"), min = 1900,
+                        max = 2017, value = c(1900, 2017),
+                        width = "300px"
+            )
+          ),
+
+          # Creates main panel with graphs
+          mainPanel(
+            tabsetPanel(
+
+              # Tab Panel with Month/Weekday vs Time BoxPlot
+              tabPanel("Month/Weekday vs Time",
+                       plotOutput("month_weekday_times",
+                                  width = "800px", height = "600px")),
+
+              # Tab Panel for Month/Weekday vs Total Graph
+              tabPanel("Month/Weekday vs Total",
+                       plotOutput("month_weekday_totals",
+                                  width = "800px", height = "600px"))
+            )
+
+          )
+        )
+
+      # Tab Bar end: Month/Weekday
       )
-      # Tap Panel Time of Attacks
-    )
-    # NavBar end
+
+  # NavBar end
   )
-  # Shiny UI end
+
+# Shiny UI end
 )
