@@ -37,7 +37,7 @@
 }
 
 .mapQuick {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 125%;
   text-shadow:
     -0.5px -0.5px 0 #000,
@@ -48,7 +48,7 @@
 
 .selectFilter {
   font-family: Times;
-  font-size: 12px;
+  font-size: 14px;
   text-shadow:
     -0.5px -0.5px 0 #000,
     0.5px -0.5px 0 #000,
@@ -110,6 +110,16 @@ h2 {
 .tabFive {
   font-family: impact;
   color:yellowgreen;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.tabSix {
+  font-family: impact;
+  color:orange;
   text-shadow:
     -1px -1px 0 #000,
     1px -1px 0 #000,

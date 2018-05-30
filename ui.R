@@ -300,7 +300,7 @@ shinyUI(
                                   width = "800px", height = "600px")),
 
             # Creates the tab panel for the third graph
-            tabPanel("Attacks by Attack Type",
+            tabPanel("Attacks by Attack Type (Fatal)",
                      plotlyOutput("species_graph_3",
                                   width = "800px", height = "600px")),
 
@@ -308,7 +308,7 @@ shinyUI(
             tabPanel(
               "Summary of Information",
               tags$div(
-                tags$h2("Here are some quick notes on the information gathered
+                tags$h2(class = "sumI", "Here are some quick notes on the information gathered
                         from the different graphs:"),
                 tags$br(),
                 tags$h4("- Of the 10 shark species with the most attacks,
@@ -321,16 +321,19 @@ shinyUI(
                         incidents"),
                 tags$br(),
                 tags$h4("- Unprovoked attacks are the most common reason for
-                        shark attacks"),
+                        shark attacks, possibly because of increased human
+                        acitivty over the years"),
                 tags$br(),
-                tags$h4("- The amount of unknow species attacks had a
+                tags$h4("- The amount of unknown species attacks had a
                         large spike in 1960s along with the highest amount of
                         provoked attacks over any decade.  This total wouldn't
                         be eclipsed until the 2000s"),
                 tags$br(),
                 tags$h4("- The amount of shark attacks have been steadily
                         increasing with most of the attacks coming
-                        from the last 17 years.")
+                        from the last 17 years. This is probably attributed
+                        to how data collection has become more advanced and
+                        increase in human activity in these areas")
               )
             )
           )
@@ -449,20 +452,25 @@ shinyUI(
             tags$br(),
             tags$h5(class = "tabFiveWords",
                     "Based on the data we used, attacks usually occur
-                    in the mornings before 1000hrs. More specifically,
-                    before 0700hrs where the sun might not have risen.
-                    This reiterates the point that water activities
-                    should not be performed in such hours as those
-                    periods of time coincide with the sharks' resting
-                    periods, as such conducting any form of activity
-                    might be seen as a form of provocation that induces
-                    a shark attack. Reading the graphs this finding is
-                    rather consistent whether month or day. Even by changing
-                    the range of years, the results are still consistent
-                    that attacks occur when the sun is out of sight.
-                    Although it is worth noting that shark attacks occur
-                    later in the mornings ,ie. 0500hrs - 1000hrs,
-                    in the second half of the year."),
+                    in the late mornings to afternoons from 1100hrs to
+                    1530hrs. This is most probably contributed to the 
+                    fact that most human activity or sports occur at this
+                    time. More specifically, these attacks occur in the
+                    afternoon at about 1400hrs. With higher frequency of
+                    activities, comes a higher probability of any form of
+                    provocation or attacks as such this data makes sense.
+                    Reading the graph this finding is rather consistent
+                    whether month or day. Even by changing the range of
+                    years, the results are still consistent that attacks
+                    occur at that timing. However the results become more
+                    inconsistent as we go further back in time. This could
+                    be due to the less comprehensive data collection methods
+                    in the past. Thus, we will study the data using the whole
+                    range of time period. Moving forward from here, a possible
+                    recommendation is to not have too much activity at
+                    that time to induce less shark attacks as the high
+                    volume of visits to these areas may have been seen
+                    as a form of provocation by the sharks."),
             tags$h3(class = "tabFive", "Findings on Month/Weekday vs Total"),
             tags$br(),
             tags$h5(class = "tabFiveWords",
@@ -511,7 +519,8 @@ shinyUI(
       "Numbers of Shark Attacks",
       
       # Creates Title
-      titlePanel("Number of Shark Attacks"),
+      titlePanel(tags$div(tags$h1(class = "mapTitle",
+                                  "Number of Shark Attacks"))),
       
       # Creates layout for this panel
       sidebarLayout(
@@ -522,7 +531,7 @@ shinyUI(
           # Creates select decades
           selectInput(
             "decade ",
-            label = h3("Select Decade You Want to Explore"),
+            label = h3(class = "tabSix", "Select a Decade Period to Explore!"),
             
             # Gives user option for the filter input panel
             choices = list(
@@ -548,7 +557,8 @@ shinyUI(
           ),
           selectInput(
             "time ",
-            label = h3("I want to know the numbers of attack happend among different"),
+            label = h3(class = "tabSix",
+                       "Number of attacks against which period?"),
             
             # Gives user option
             choices = list(
@@ -560,16 +570,18 @@ shinyUI(
             width = "200px"
           ),
           tags$br(),
-          tags$h3(class = "description", "Description"),
+          tags$h3(class = "tabSix", "Description"),
           tags$h5(class = "descriptionDetail",
-          "With this bar chart, you are free to explore the dataset among 
-            different decades. In the specific decade you choose, the graph
-            displays numbers of attacks happened among different years/months/days.
-            For instance, if you want to know about the month with highest
-            frequency of attacks and the month with less frequency of attacks
-            among 2010-2017. With only two step, you can accomplish your goal:
-            1. set decade as 2010-2017; 2.set the unit as month. Feel
-            welcome to explore!")
+                  "With this interactive bar chart, you can explore the
+                  dataset within different time periods. In the specific
+                  decade you choose, the graph displays numbers of shark
+                  attacks against different time periods. For instance,
+                  if you want to learn about the month with the highest
+                  frequency of attacks and the month with less frequency of
+                  attacks between 2010-2017. You can do this in two simple
+                  steps: 1. set the decade to 2010-2017;
+                  2.set the unit,time period, as month. That's it!
+                  Feel free to explore!")
         ),
         mainPanel(
           plotOutput("bar_chart",
