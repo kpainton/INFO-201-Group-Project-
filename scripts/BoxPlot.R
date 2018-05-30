@@ -14,7 +14,7 @@ time_breakdown <- function(df, select) {
 
   # Filters for Species
   top_ten <- c(
-    "White Shark", "Bull Shark", "Tiger Shark", "Hammerhead Shark",
+    "Great White Shark", "Bull Shark", "Tiger Shark", "Hammerhead Shark",
     "Wobbegong Shark", "Blacktip Shark", "Bronze Whaler Shark",
     "Nurse Shark", "Raggedtooth Shark"
   )

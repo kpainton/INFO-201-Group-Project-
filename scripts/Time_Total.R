@@ -6,7 +6,7 @@ month_weekday_time <- function(df, front, back, select) {
   # Filters data for year range
   df <- df %>%
     filter(Year >= front) %>%
-    filter(Year <= back) %>% 
+    filter(Year <= back) %>%
     filter(Time != 0)
 
   # Filters data for useable entries
@@ -41,7 +41,7 @@ month_weekday_time <- function(df, front, back, select) {
 month_weekday_total <- function(df, front, back, select) {
   df <- df %>%
     filter(Year >= front) %>%
-    filter(Year <= back) 
+    filter(Year <= back)
 
   # Filters data for useable entries
   df <- df %>%

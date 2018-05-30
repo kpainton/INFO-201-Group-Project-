@@ -1,4 +1,6 @@
-# Project Proposal
+# Shark Attacks - Final Project
+
+Here you can find our final project on shark attacks from group BB3: https://kpainton.shinyapps.io/Shark-Attacks-INFO201-FINAL-Group-BB-3/.  The website is best viewed when the browser is in full screen. 
 
 ## Project Description
 We’ll be working with the *_Global Shark Attack dataset_* collected by the Shark Research Institute. The Shark Research Institute is a scientific research organization founded in 1991 in Princeton, New Jersey. It was created to sponsor and conduct research on sharks ensuring and bringing awareness to their conservation. This dataset aims to explore the significance of interactions between sharks and humans in comparison to the wide variety of dangers we are exposed to in our daily lives. Humans are not a prey to sharks, this dataset aims to give a better understanding of interactions between humans and sharks to minimize the risk of being injured by a shark and focusing on the importance of conserving all shark species. The dataset’s objective is to illustrate the actual threat that sharks present to humans, to convey the message that these creatures are not at all aggressive towards humans but our ignorance and belief in stereotypes have made us think otherwise.

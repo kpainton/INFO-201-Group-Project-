@@ -2,12 +2,15 @@
 # Create the function to display the number of attacks in
 # several conditions
 create_bar <- function(df, select, decade) {
+
   # add the column to declare the month and day
   df$Month <- substr(df$Case.Number, 6, 7)
   df$Day <- substr(df$Case.Number, 9, 10)
+
   # get the data in selected decade and delete useless data
   df <- df %>%
     filter(Decade == decade & Month != "00" & Day != "00")
+
   # plot the graph if user choose year as differentiate condition
   if (select == "Year") {
     df <- df %>%
@@ -21,6 +24,7 @@ create_bar <- function(df, select, decade) {
         title = "The numbers of attacks happened among years",
         x = "Year", y = "Number"
       )
+
     # plot the graph if user choose month as differentiate condition
   } else if (select == "Month") {
     df <- df %>%
@@ -34,6 +38,7 @@ create_bar <- function(df, select, decade) {
         x = "Month", y = "Number"
       ) +
       theme_minimal()
+
     # plot the graph if user choose day as differentiate condition
   } else if (select == "Day") {
     df <- df %>%
@@ -48,8 +53,6 @@ create_bar <- function(df, select, decade) {
       ) +
       theme_minimal()
   }
-
-
 
   # return graph
   return(p)
