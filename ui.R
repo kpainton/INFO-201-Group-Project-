@@ -446,20 +446,25 @@ shinyUI(
             tags$br(),
             tags$h5(class = "tabFiveWords",
                     "Based on the data we used, attacks usually occur
-                    in the mornings before 1000hrs. More specifically,
-                    before 0700hrs where the sun might not have risen.
-                    This reiterates the point that water activities
-                    should not be performed in such hours as those
-                    periods of time coincide with the sharks' resting
-                    periods, as such conducting any form of activity
-                    might be seen as a form of provocation that induces
-                    a shark attack. Reading the graphs this finding is
-                    rather consistent whether month or day. Even by changing
-                    the range of years, the results are still consistent
-                    that attacks occur when the sun is out of sight.
-                    Although it is worth noting that shark attacks occur
-                    later in the mornings ,ie. 0500hrs - 1000hrs,
-                    in the second half of the year."),
+                    in the late mornings to afternoons from 1100hrs to
+                    1530hrs. This is most probably contributed to the 
+                    fact that most human activity or sports occur at this
+                    time. More specifically, these attacks occur in the
+                    afternoon at about 1400hrs. With higher frequency of
+                    activities, comes a higher probability of any form of
+                    provocation or attacks as such this data makes sense.
+                    Reading the graph this finding is rather consistent
+                    whether month or day. Even by changing the range of
+                    years, the results are still consistent that attacks
+                    occur at that timing. However the results become more
+                    inconsistent as we go further back in time. This could
+                    be due to the less comprehensive data collection methods
+                    in the past. Thus, we will study the data using the whole
+                    range of time period. Moving forward from here, a possible
+                    recommendation is to not have too much activity at
+                    that time to induce less shark attacks as the high
+                    volume of visits to these areas may have been seen
+                    as a form of provocation by the sharks."),
             tags$h3(class = "tabFive", "Findings on Month/Weekday vs Total"),
             tags$br(),
             tags$h5(class = "tabFiveWords",
