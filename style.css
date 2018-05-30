@@ -147,3 +147,9 @@ h6 {
 .disclaimer {
   font-size: 8px;
 }
+
+.left {
+    display: block;
+    margin-left: 0px;
+    margin-right: auto;
+}

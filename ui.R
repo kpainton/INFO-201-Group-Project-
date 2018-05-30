@@ -277,11 +277,17 @@ shinyUI(
                     "Unknown Shark" = "Unknown Species"
                    )
           )
+    
         ),
 
         # Uses tabset panel to create four different tabs of information
         mainPanel(
           tabsetPanel(
+            # Creates tab panel for shark types with pictures
+            tabPanel("Types of Sharks", 
+                       tags$h3("Here are the different types of sharks that made the recorded attacks:"),
+                       tags$img(src = "sharkslayout.jpg", height = 900, width = 1500, class = "left")
+                     ),
 
             # Creates the tab panel for the first graph
             tabPanel("Attacks by Decade (Fatal)",
@@ -298,7 +304,7 @@ shinyUI(
                      plotlyOutput("species_graph_3",
                                   width = "800px", height = "600px")),
 
-            # Creates the tab panel for the summmary infromation
+            # Creates the tab panel for the summmary information
             tabPanel(
               "Summary of Information",
               tags$div(
