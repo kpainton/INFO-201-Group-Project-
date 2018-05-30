@@ -35,7 +35,7 @@ shinyUI(
                   different species of sharks, and better understand the
                   complexity of these different incidents."),
           tags$br(),
-          tags$h3(class = "mapTitle", "Information on the Data set"),
+          tags$h2(class = "mapTitle", "Information on the Data set"),
           tags$img(src = "oceanFloor.jpg", height = 200, width = 600,
                    class = "center"),
           tags$br(),
@@ -72,9 +72,11 @@ shinyUI(
                  If proven a false stereotype, the mediacan inform the world
                  (their target audience) that sharks are not as dangerous as
                  the general population thinks."),
-          tags$h3(class = "mapTitle", "Tab Functions"),
-          tags$img(src = "shark2.jpg", height = 300, width = 500,
+          tags$br(),
+          tags$h2(class = "mapTitle", "Tab Functions"),
+          tags$img(src = "nemo.jpg", height = 300, width = 500,
                    class = "center"),
+          tags$br(),
           tags$p(class = "tabsInfo", "Our App includes the 'Map' tab that
                  gives a summarized and organized visualization of
                  the data that aims to answer:"),
@@ -115,7 +117,7 @@ shinyUI(
       sidebarLayout(
         sidebarPanel(
           tags$div(
-            tags$h5(class = "mapQuick", "This map creates a data
+            tags$h5(class = "context", "This map creates a data
                     visualization of the locations where shark
                     attacks occur in the world. Use the widgets
                     below to change the data displayed on the
@@ -196,7 +198,7 @@ shinyUI(
 
             # Creates the panel for information gathered from the map
             tabPanel("Summary of Information", tags$div(
-              tags$h2(class = "sumI", "Some quick notes on Map:"),
+              tags$h3(class = "sumI", "Some quick notes on Map:"),
               tags$br(),
               tags$h4("1) Most aggressive sharks appear to be the
                       Tiger Shark, White Shark, and Bull Shark"),
@@ -212,10 +214,10 @@ shinyUI(
               tags$h4("4) Most provoked attacks occur along the
                       Southeastern Coast of the United States"),
               tags$br(),
-              tags$h2(class = "sumI", "This information also provides insight
+              tags$h3(class = "sumI", "This information also provides insight
                       on the 'regional' sharks."),
-              tags$h3(class = "different", "Note: region-exlusive represents a
-                      species that only appeared in that particualr region"),
+              tags$h4(class = "different", "Note: region-exlusive represents a
+                      species that only appeared in that particular region"),
               tags$br(),
               tags$h4("Australia: Bronze Whaler Shark (region-exclusive),
                       Bull Shark, Carpet Shark (region-exclusive),
@@ -285,7 +287,7 @@ shinyUI(
           tabsetPanel(
             # Creates tab panel for shark types with pictures
             tabPanel("Types of Sharks", 
-                       tags$h3("Here are the different types of sharks that made the recorded attacks:"),
+                       tags$h3("Here are the different types of sharks that made the recorded attacks:", class = "sharkTypes"),
                        tags$img(src = "sharkslayout.jpg", height = 900, width = 1500, class = "left")
                      ),
 
@@ -308,7 +310,7 @@ shinyUI(
             tabPanel(
               "Summary of Information",
               tags$div(
-                tags$h2(class = "sumI", "Here are some quick notes on the information gathered
+                tags$h3(class = "sharkTypes", "Here are some quick notes on the information gathered
                         from the different graphs:"),
                 tags$br(),
                 tags$h4("- Of the 10 shark species with the most attacks,
@@ -362,7 +364,7 @@ shinyUI(
           # Creates select widgit for x axis on graph
           selectInput(
             "filterTime",
-            label = h3("Select X axis"),
+            label = h3(class = "tabFive", "Select X Variable"),
 
             # Gives user option for the filter input panel
             choices = list(
@@ -374,31 +376,36 @@ shinyUI(
             width = "200px"
           ),
           tags$div(
-            tags$h5(class = "AttackTime", "
+            tags$h5(class = "context", "
                     In this tab, we have a box plot graph which we can select 
                     our preferred horizontal axis variable and see which time 
                     of the day were the attacks most prominent on, 
                     based on that variable category. 
                     We have grouped the dataset into four categories:"),
             tags$br(),
-            tags$h6(class = "Activity", "Activity: The data is grouped based on which 
+            tags$h4(class = "contextTitle", "ACTIVITY"),
+            tags$h5(class = "context", "
+                    The data is grouped based on which 
                     popular water activity was the victims doing 
                     when the attack occurred. The graph then displays 
                     which time of day were the attacks during each activity most prominent."),
             tags$br(),
-            tags$h6(class = "AttackType", "Attack Type: The data is grouped based 
+            tags$h4(class = "contextTitle", "ATTACK TYPE"),
+            tags$h5(class = "context", "The data is grouped based 
                     on whether the attacks came from sharks that were provoked or 
                     unprovoked, or caused by boating. The graph then displays on 
                     which time of day were the attacks most prominent based on each attack type."),
             tags$br(),
-            tags$h6(class = "Decade", "Decade: The data is grouped based on attacks 
+            tags$h4(class = "contextTitle", "DECADE"),
+            tags$h5(class = "context", "The data is grouped based on attacks 
                     that happened every 10-year period from 1880 to 2017. The graph 
                     then displays on which time of day were the shark attacks most 
                     prominent in each decade. As with other time-period graphs, a 
                     general trend is visible with the time of day for the shark attacks 
                     narrowing down to mostly during daytime!"),
             tags$br(),
-            tags$h6(class = "Species", "Species: The data is grouped based on the 
+            tags$h4(class = "contextTitle", "SPECIES"),
+            tags$h5(class = "context", "The data is grouped based on the 
                     types of sharks that made the recorded attacks. The graph 
                     then displays on which time of the day do each species 
                     of shark mostly attacked on. ")
@@ -449,8 +456,7 @@ shinyUI(
                         width = "300px"
             ),
             tags$h3(class = "tabFive", "Findings on Month/Weekday vs Time"),
-            tags$br(),
-            tags$h5(class = "tabFiveWords",
+            tags$h5(class = "context",
                     "Based on the data we used, attacks usually occur
                     in the late mornings to afternoons from 1100hrs to
                     1530hrs. This is most probably contributed to the 
@@ -471,9 +477,9 @@ shinyUI(
                     that time to induce less shark attacks as the high
                     volume of visits to these areas may have been seen
                     as a form of provocation by the sharks."),
-            tags$h3(class = "tabFive", "Findings on Month/Weekday vs Total"),
             tags$br(),
-            tags$h5(class = "tabFiveWords",
+            tags$h3(class = "tabFive", "Findings on Month/Weekday vs Total"),
+            tags$h5(class = "context",
                     "Measuring time periods against the total attacks,
                     focusing on Months, we found that the period from
                     June to September proved to be the deadliest months.
@@ -571,7 +577,7 @@ shinyUI(
           ),
           tags$br(),
           tags$h3(class = "tabSix", "Description"),
-          tags$h5(class = "descriptionDetail",
+          tags$h5(class = "context",
                   "With this interactive bar chart, you can explore the
                   dataset within different time periods. In the specific
                   decade you choose, the graph displays numbers of shark
