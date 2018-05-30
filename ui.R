@@ -72,6 +72,8 @@ shinyUI(
                  If proven a false stereotype, the mediacan inform the world
                  (their target audience) that sharks are not as dangerous as
                  the general population thinks."),
+          tags$a(href = "http://www.sharkattackfile.net/",
+                 "Shark Attack Website Reference Here!"),
           tags$h3(class = "mapTitle", "Tab Functions"),
           tags$img(src = "shark2.jpg", height = 300, width = 500,
                    class = "center"),
@@ -93,11 +95,37 @@ shinyUI(
                  the various shark species and the number of attacks
                  they have inflicted. The sub tabs within gives a
                  detailed account of the time period the specific
-                 shark species attacked and the state at which the
-                 attack occurred."),
+                 shark species attacked and the attack type of the
+                 accident."),
           tags$p(class = "tabsInfo",  "The 'Time of Shark Attacks Tab',
                  aims to find out when attacks usually occur at the
-                 given time of the day.")
+                 given time of the day. It explores the time at which
+                 attack occurs for given activites, attack type,
+                 decade period and shark species."),
+          tags$p(class = "tabsInfo",
+                 "The 'Month/Weekday Breakdown of Attacks' tab explores
+                 which time of the day are shark attacks most frequent
+                 given a specific month or day to look at, given a time
+                 time period. Furthermore, another sub tab explores the
+                 deadliest months in the year or day in the week given
+                 a certain time period."),
+          tags$p(class = "tabsInfo",
+                 "The 'Number of Shark Attacks' tab explores the total
+                 number of attachs in a given year, month or day of the
+                 month in specific. This tab analyzes a more detailed
+                 time unit than the previous tab."),
+          tags$h3(class = "mapTitle", "Conclusion"),
+          tags$p(class = "tabsInfo",
+                 "In conclusion, our App aims to answer many questions
+                 that deal with the nature of shark attacks, where it 
+                 occurs and the frequency of the attacks. From these
+                 data visualizations, we try to infer the reasons for
+                 such attacks and how we can move forward to prevent
+                 any form of such attacks or conflicts between humans
+                 and this already endangered species. We hope that your
+                 exploring of our App will serve to be informative and
+                 beneficial to your experience with sharks no matter
+                 profession or background you might be from.")
         )
       )
       # Tap Panel: Mission Page end
