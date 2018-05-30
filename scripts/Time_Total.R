@@ -32,8 +32,8 @@ month_weekday_time <- function(df, front, back, select) {
   g + geom_boxplot(varwidth = T, fill = "light blue") +
     labs(
       title = paste("Time vs ", select),
-      x = "Time",
-      y = select
+      x = select,
+      y = "Time"
     )
 }
 
