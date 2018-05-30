@@ -294,7 +294,7 @@ shinyUI(
                                   width = "800px", height = "600px")),
 
             # Creates the tab panel for the third graph
-            tabPanel("Attacks by Attack Type",
+            tabPanel("Attacks by Attack Type (Fatal)",
                      plotlyOutput("species_graph_3",
                                   width = "800px", height = "600px")),
 
